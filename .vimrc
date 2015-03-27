@@ -45,6 +45,9 @@ endif
 " Reset everything to their defaults
 "set all&
 
+let g:colors_name = 'gruvbox'
+set background=dark
+
 call s:source_rc('init.rc.vim')
 
 " call neobundle#rc(expand('$CACHE/neobundle'))
@@ -127,16 +130,16 @@ call s:source_rc('view.rc.vim')
 call s:source_rc('filetype.rc.vim')
 
 "---------------------------------------------------------------------------
-" Plugin:
-"
-
-call s:source_rc('plugins.rc.vim')
-
-"---------------------------------------------------------------------------
 " Mappings:
 "
 
 call s:source_rc('mappings.rc.vim')
+
+"---------------------------------------------------------------------------
+" Plugin:
+"
+
+call s:source_rc('plugins.rc.vim')
 
 "---------------------------------------------------------------------------
 " Commands:
@@ -189,7 +192,7 @@ endif
 "
 
 " If true Vim master, use English help file.
-set helplang& helplang=en,ja
+set helplang& helplang=en
 
 " Default home directory.
 let t:cwd = getcwd()
