@@ -1,0 +1,23 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  focus = system
+[keybindings]
+  close_term = <Primary><Alt>q
+[profiles]
+  [[default]]
+    background_darkness = 0.77
+    background_image = /home/lkozhinov/Изображения/01-star-best.gif
+    foreground_color = "#1c8b0c"
+    visible_bell = true
+    urgent_bell = true
+    show_titlebar = false
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
