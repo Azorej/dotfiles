@@ -49,7 +49,8 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/home/lkozhinov/projects/my/cocos2d-x:/home/lkozhinov/projects/my/cocos2d-x/templates:/home/lkozhinov/projects/my/cocos2d-x/tools/cocos2d-console/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export GOPATH="$HOME/projects/go"
+export PATH="/home/lkozhinov/projects/my/cocos2d-x:/home/lkozhinov/projects/my/cocos2d-x/templates:/home/lkozhinov/projects/my/cocos2d-x/tools/cocos2d-console/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$GOPATH/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -69,6 +70,8 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+ssh-agent
+ssh-add
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -78,3 +81,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
