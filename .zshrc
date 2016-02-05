@@ -108,3 +108,8 @@ powerline-daemon -q
 # if [[ -r /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh ]]; then
      # source /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh
 # fi
+
+# For server only
+# if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
+#     tmux attach || tmux new
+# fi
