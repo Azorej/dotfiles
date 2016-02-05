@@ -1,14 +1,18 @@
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+  export ZSH=/home/lkozhinov/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="af-magic"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -23,15 +27,15 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -45,12 +49,9 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git svn thefuck)
 
 # User configuration
-
-export GOPATH="$HOME/projects/go"
-export PATH="/home/lkozhinov/projects/my/cocos2d-x:/home/lkozhinov/projects/my/cocos2d-x/templates:/home/lkozhinov/projects/my/cocos2d-x/tools/cocos2d-console/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$GOPATH/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -70,8 +71,6 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-ssh-agent
-ssh-add
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -81,5 +80,31 @@ ssh-add
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+alias tmux='tmux -2'
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+#PATH
+typeset -U path
+path+=$HOME/bin
+path+=$HOME/usr/bin
+path+=$HOME/local/bin
+path+=$HOME/.local/bin
+path+=$HOME/projects/my/fzf/bin
+path=($^path(N))
+
+#PYTHONPATH
+# typeset -T PYTHONPATH pythonpath
+# typeset -U pythonpath
+# pythonpath+=$HOME/path
+# pythonpath=($^pythonpath(N))
+
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
+export GOPATH="$HOME/projects/my/go"
+
+# Powerline support
+powerline-daemon -q
+# if [[ -r /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+     # source /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh
+# fi
