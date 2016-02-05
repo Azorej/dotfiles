@@ -81,6 +81,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tmux='tmux -2'
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -110,6 +111,10 @@ powerline-daemon -q
 # fi
 
 # For server only
+# ssh_auth_sock=~/.ssh/ssh_auth_sock.$(hostname)
+# if [ -h $ssh_auth_sock ]; then
+#     export SSH_AUTH_SOCK=$ssh_auth_sock
+# fi
 # if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-#     tmux attach || tmux new
+#     # tmux attach || tmux new
 # fi
